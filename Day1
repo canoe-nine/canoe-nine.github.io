@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css"/>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			.z_header{
+				width: 100%;
+				height: 70px;
+				background: white;
+			}
+			.z_header>.z_con{
+				width: 1100px;
+				height: 70px;
+				margin: 0px auto;
+			}
+			.z_header>.z_con>a{
+				height: 70px;
+				width: 290px;
+				display: inline-block;
+				background-image:url(../img/modules.png);
+				background-repeat: no-repeat;
+				background-position: 0px -48px;
+				float: left;
+			}
+			.z_header>.z_con>.z_inp{
+				width: 300px;
+				height: 70px;
+				float: left;
+				position: relative;
+				margin-left: 334px;
+			}
+			.z_header>.z_con>.z_inp>span{
+				height: 70px;
+				width: 300px;
+				display: inline-block;
+				background-image:url(../img/modules.png);
+				background-repeat: no-repeat;
+				background-position: 0px 22px;
+				position: absolute;
+				top:-6px;
+				left: -4px;
+			}
+			.z_header>.z_con>.z_inp>input{
+				width: 255px;
+				height: 30px;
+				position: absolute;
+				top: 19px;
+				left: 28px;
+				z-index: 1110;
+				border:none;
+				outline: none;
+				font-size: 12px;
+				line-height: 30px;
+			}
+			.z_header>.z_con>.z_gou>a{
+				text-decoration: none;
+				width: 36px;
+				height: 36px;
+				margin: 17px 0 0 41px;
+				float: left;
+				background-image:url(../img/modules.png);
+				background-repeat: no-repeat;
+				background-position: -110px -158px;
+				position: relative;
+				cursor: pointer;
+			}
+			.z_header>.z_con>.z_gou>a>span{
+				width: 18px;
+				height: 18px;
+				background-image:url(../img/modules.png);
+				background-repeat: no-repeat;
+				background-position: -156px -158px;
+				position: absolute;
+				top: -8px;
+				left: 26px;
+				color: white;
+				text-align: center;
+				line-height: 18px;
+			}
+			.z_header>.z_con>.z_login{
+				width: 62px;
+				height: 36px;
+				/*border: 1px solid black;*/
+				float: left;
+				margin: 15px 0 0 37px;
+				background: url(../img/arrow-d.png);
+				background-repeat: no-repeat;
+				background-position: right;
+				position: relative;
+			}
+			.z_header>.z_con>.z_login>.z_san{
+				position: absolute;
+				top: 35px;
+				left: -53px;
+				width: 160px;
+				height: 18px;
+				/*border: 1px solid black;*/
+				background-image: url(../img/modules.png);
+				background-position: 0px -128px;
+				display: none;
+			}
+			
+			.z_header>.z_con>.z_login>.z_log{
+				display: inline-block;
+				width: 36px;
+				height: 36px;
+				text-align: center;
+				line-height: 36px;
+				font-size: 14px;
+			}
+			.z_header>.z_con>.z_login>ul{
+				width: 160px;
+				background: white;
+				/*padding-left: 24px;*/
+				font-size: 12px;
+				position: absolute;
+				top: 51px;
+				left: -53px;
+			    box-shadow: 0 4px 7px #555;
+			    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
+			    display: none;
+			}
+			.z_header>.z_con>.z_login>ul>li{
+				list-style: none;
+				padding-left: 24px;
+				/*border: 1px solid black;*/
+			}
+			.z_header>.z_con>.z_login>ul>li>a{
+				text-decoration: none;
+				width: 134px;
+				height: 40px;
+				line-height: 40px;
+				color: black;
+			}
+			.z_header>.z_con>.z_login>ul>li>a>span{
+				display: inline-block;
+				height: 16px;
+				width: 18px;
+				margin-right: 7px;
+			}
+			.z_header>.z_con>.z_login>ul>li>a>.z_phone{
+				height: 18px;
+				background-image: url(../img/phonelog.png);
+				background-position: -1px -1px;
+				background-repeat: no-repeat;
+				position: relative;
+				top: 5px;
+				/*border: 1px solid black;*/ 
+			}
+			.z_header>.z_con>.z_login>ul>li>a>.z_wechat{
+				background-image: url(../img/logins.png);
+				background-position: -85px -2px;
+				background-repeat: no-repeat;
+				position: relative;
+				top: 4px;
+				/*border: 1px solid black;*/ 
+			}
+			.z_header>.z_con>.z_login>ul>li>a>.z_qq{
+				height: 18px;
+				background-image: url(../img/logins.png);
+				background-position: -113px -1px;
+				background-repeat: no-repeat;
+				position: relative;
+				top: 5px;
+				/*border: 1px solid black;*/ 
+			}
+			.z_header>.z_con>.z_login>ul>li>a>.z_xin{
+				height: 18px;
+				width: 18px;
+				background-image: url(../img/sina.png);
+				background-position: -2px -1px;
+				background-repeat: no-repeat;
+				position: relative;
+				top: 5px;
+				/*border: 1px solid black;*/ 
+			}
+			.z_header>.z_con>.z_login>ul>li>a>.z_wang{
+				height: 18px;
+				width: 18px;
+				background-image: url(../img/netease.png);
+				background-position: -1px -1px;
+				background-repeat: no-repeat;
+				position: relative;
+				top: 5px;
+				/*border: 1px solid black;*/ 
+			}
+			.z_header>.z_con>.z_login:hover{
+				background: url(../img/arrow-u.png);
+				background-repeat: no-repeat;
+				background-position: right;
+			}
+			.z_header>.z_con>.z_login:hover>.z_san{
+				display: inline-block;
+			}
+			.z_header>.z_con>.z_login:hover>ul{
+				display: inline-block;
+			}
+			.z_header>.z_con>.z_login>ul>li:hover{
+				background-color: rgba(200,200,200,0.3);
+
+			}
+			
+			.z_nav{
+				height: 480px;
+				background-color: powderblue
+			}
+			.z_list{
+				width: 100%;
+				height: 80px;
+				border-bottom: 1px solid silver;
+				/*background-color: pink*/
+			}
+			.z_list>.z_tab{
+				width: 1100px;
+				margin: 0px auto;
+			}
+			.z_list>.z_tab>ul{
+				width: 100%;
+				height: 80px;
+			}
+			.z_list>.z_tab>ul>li{
+				list-style: none;
+				width: 275px;
+				height: 80px;
+				float: left;
+			}
+			.z_list>.z_tab>ul>li>em{
+				display: inline-block;
+				height: 48px;
+				width: 1px;
+				margin: 16px 0px 16px 0px;
+				background: black;
+				opacity: 0.1;
+			}
+			.z_list>.z_tab>ul>li>a{
+				float: left;
+				width: 250px;
+				padding: 0 10px;
+				text-align: center;
+				font-size: 0;
+				padding-top: 16px;
+			}
+			.z_list>.z_tab>ul>li>a>img{
+				display: inline-block;
+				width: 48px;
+				height: 48px;
+				vertical-align: top;
+				
+			}
+			.z_list>.z_tab>ul>li>a>span{
+				display: inline-block;
+				max-width: 190px;
+				height: 80px;
+				padding-left: 12px;
+				line-height: 50px;
+				font-size: 14px;
+				font-weight: bold;
+				color: black;
+			}
+			.z_list>.z_tab>ul>li>a>.z_left{
+				display: inline-block;
+				width: 48px;
+				height: 48px;
+				background-image: url(../img/jifen.png);
+				background-repeat: no-repeat;
+				/*margin-left: -50px;*/
+			}
+			.z_list>.z_tab>ul>li>a>.z_right{
+				display: inline-block;
+				height: 80px;
+				/*border: 1px solid black;*/
+				padding-left: 8px;
+				vertical-align: top;
+				
+			}
+			.z_list>.z_tab>ul>li>a>.z_right>div{
+				padding-top: 20px;
+				font-size: 14px;
+				font-weight: bold;
+				color: black;
+				margin-top: -12px;
+			}
+			.z_list>.z_tab>ul>li>a>.z_right>.z_one{
+				display: inline-block;
+				font-size: 14px;
+				color: red;
+			}
+			.z_list>.z_tab>ul>li>a>.z_right>.z_two{
+				display: inline-block;
+				padding: 2px 0 0 4px;
+				font-size: 12px;
+				color: red;
+			}
+			.z_conter{
+				width: 1100px;
+			}
+			.z_conter>.z_row1>.z_mid{
+				width: 1100px;
+				min-width: 1000px;
+				height: 300px;
+				/*background: peachpuff;*/
+				margin-top: 40px;
+			}
+			
+			.z_conter>.z_row1>.z_mid>.z_mid_left{
+				width: 542px;
+				height: 300px;
+				float: left;
+			}
+			.z_conter>.z_row1>.z_mid>.z_mid_right{
+				width: 542px;
+				height: 300px;
+				float: right;
+			}
+			.z_conter>.z_row1>h2{
+				font-size: 24px;
+				font-weight: bold;
+				margin-top: 50px;
+			}
+			.z_conter>.z_row1>.z_li{
+				/*height: 263px;*/
+				/*border: 1px solid black;*/
+				padding: 0px 16px 0px 0px;
+    			height: 382px;
+    			position: relative;
+			}
+			.z_conter>.z_row1>.z_li>img{
+				width: 263px;
+				height: 263px;
+				background: rgb(249,249,249);
+			}
+			.z_conter>.z_row1>.z_li>.z_tet{
+				text-align: center;
+				font-size: 14px;
+				line-height: 18px;
+				margin-top: 10px;
+			}
+			.z_conter>.z_row1>.z_li>.z_tet>span{
+				display: inline-block;
+				border: 1px solid rgb(211,58,49);
+				font-size: 12px;
+				color: rgb(211,58,49);
+				height: 19px;
+				line-height: 19px;
+				padding: 0px 3px;
+			}
+			.z_conter>.z_row1>.z_li>.z_tet>a{
+				text-decoration: none;
+    			color: black;
+    			text-align: center;
+    			
+			}
+			.z_conter>.z_row1>.z_li>.z_tet>a:hover{
+				text-decoration: underline;
+    			color: black;
+			}
+			.z_conter>.z_row1>.z_li>.z_tet>p{
+				margin-top: 4px;
+				font-size: 16px;
+				color: #d33a31;
+			}
+			.z_conter>.z_row1>.z_li>.z_biao{
+				display: inline-block;
+				width: 60px;
+				height: 60px;
+				border-radius: 50%;
+				background: #d33a31;
+				position: absolute;
+				top: 10px;
+				left: 10px;
+				color: white;
+			}
+			.z_conter>.z_row1>.z_li>.z_biao>.z_new{
+				font-size: 15px;
+				position: absolute;
+				top: 13px;
+				left: 50%;
+				transform: translateX(-50%);
+			
+			}
+			.z_conter>.z_row1>.z_li>.z_biao>.z_del{
+				font-size: 13px;
+				position: absolute;
+				top: 30px;
+				left: 50%;
+				transform: translateX(-50%);
+				/*text-decoration: line-through;*/
+				opacity: 0.7;
+			}
+			.z_conter>.z_row2>.z_buy{
+				/*width: 100%;*/
+				height: 180px;
+				background-color: peachpuff;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="z_header">
+			<div class="z_con">
+				<a href="网易云商城.html"></a>
+				<div class="z_inp">
+					<input type="text" placeholder="真无线耳机"/>
+					<span></span>
+				</div>
+				<div class="z_gou">
+					<a href="#">
+						<span>0</span>
+					</a>
+				</div>
+				<div class="z_login">
+					<span class="z_log">登录</span>
+					<ul>
+						<li>
+							<a href="#">
+								<span class="z_phone"></span>
+								手机号登录
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="z_wechat"></span>
+								微信登录
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="z_qq"></span>
+								QQ登录
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="z_xin"></span>
+								新浪微博登录
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="z_wang"></span>
+								网易邮箱账号登录
+							</a>
+						</li>
+					</ul>
+					<span class="z_san"></span>
+				</div>
+			</div>
+			
+		</div>
+		<div class="z_nav">
+					
+		</div>
+		<div class="z_list">
+			<div class="z_tab">
+				<ul>
+					<li>
+						<a href="#">
+							<img src="../img/hot.jpg"/>
+							<span>热销爆品</span>
+						</a>
+						<em></em>
+					</li>
+					<li>
+						<a href="#">
+							<img src="../img/IP.jpg"/>
+							<span>IP周边</span>
+						</a>
+						<em></em>
+					</li>
+					<li>
+						<a href="#">
+							<img src="../img/shuma.jpg"/>
+							<span>数码影音</span>
+						</a>
+						<em></em>
+					</li>
+					<li>
+						<a href="#">
+							<div class="z_left">
+							</div>
+							<div class="z_right">
+								<div>云贝商城</div>
+								<span class="z_one">0</span>
+								<span class="z_two">云贝</span>
+							</div>
+						</a>
+						
+					</li>
+				</ul>
+			</div>			
+		</div>
+		<div class="container z_conter">
+			<div class="row z_row1">
+				<div class="z_mid">
+					<div class="z_mid_left">
+						<a href="#">
+							<img src="../img/mid_left.jpg"/>
+						</a>
+					</div>
+					<div class="z_mid_right">
+						<a href="#">
+							<img src="../img/mid_right.jpg"/>
+						</a>
+					</div>
+				</div>
+				<h2>编辑推荐</h2>
+				<div class="col-lg-3 z_li">
+					<img src="../img/erji.jpg"/>
+					<div class="z_tet">
+						<span>特价</span>
+						<a href="#">HT-08运动蓝牙耳机 3D立体声 三键线控 安卓苹果通用</a>
+						<p>￥59</p>
+					</div>
+					<span class="z_biao">
+						<span class="z_new">￥59</span>
+						<span class="z_del"><s>￥79</s></span>
+					</span>
+				</div>
+				<div class="col-lg-3 z_li">
+					<img src="../img/duanxiu.jpg"/>
+					<div class="z_tet">
+						<span>特价</span>
+						<a href="#">网易云音乐玩乐系列Slogan短袖T恤</a>
+						<p>￥79</p>
+					</div>
+					<span class="z_biao">
+						<span class="z_new">￥79</span>
+						<span class="z_del"><s>￥129</s></span>
+					</span>
+				</div>
+				<div class="col-lg-3 z_li">
+					<img src="../img/beizi.jpg"/>
+					<div class="z_tet">
+						<span>特价</span>
+						<a href="#">网易云音乐享乐系列红心透明双层吸管杯</a>
+						<p>￥39</p>
+					</div>
+					<span class="z_biao">
+						<span class="z_new">￥39</span>
+						<span class="z_del"><s>￥99</s></span>
+					</span>
+				</div>
+				<div class="col-lg-3 z_li">
+					<img src="../img/lanya.jpg"/>
+					<div class="z_tet">
+						<span>用券减120</span>
+						<a href="#">H16 Pro 入耳检测开盖弹窗无线充电 蓝牙5.0真无线耳机 苹果安卓通用</a>
+						<p>￥229</p>
+					</div>
+					<span class="z_biao">
+						<span class="z_new">￥229</span>
+						<span class="z_del"><s>￥299</s></span>
+					</span>
+				</div>
+				<div class="col-lg-3 z_li">
+					<img src="../img/san.jpg"/>
+					<div class="z_tet">
+						<span>特价</span>
+						<a href="#">网易云音乐享乐系列波纹透明雨伞</a>
+						<p>￥49</p>
+					</div>
+					<span class="z_biao">
+						<span class="z_new">￥49</span>
+						<span class="z_del"><s>￥119</s></span>
+					</span>
+				</div>
+				<div class="col-lg-3 z_li">
+					<img src="../img/H12.jpg"/>
+					<div class="z_tet">
+						<span>用券减130</span>
+						<a href="#">H12Pro 智能双数显真无线 蓝牙5.0安卓苹果通用</a>
+						<p>￥59</p>
+					</div>
+					<!--<span class="z_biao">
+						<span class="z_new">￥59</span>
+						<span class="z_del"><s>￥79</s></span>
+					</span>-->
+				</div>
+				<div class="col-lg-3 z_li">
+					<img src="../img/i12.jpg"/>
+					<div class="z_tet">
+						<span>特价</span>
+						<a href="#">i12触控真无线蓝牙耳机 蓝牙5.0苹果安卓通用</a>
+						<p>￥129</p>
+					</div>
+					<span class="z_biao">
+						<span class="z_new">￥129</span>
+						<span class="z_del"><s>￥199</s></span>
+					</span>
+				</div>
+				<div class="col-lg-3 z_li">
+					<img src="../img/maozi.jpg"/>
+					<div class="z_tet">
+						<span>特价</span>
+						<a href="#">网易云音乐玩乐系列潮流渔夫帽</a>
+						<p>￥59</p>
+					</div>
+					<span class="z_biao">
+						<span class="z_new">￥59</span>
+						<span class="z_del"><s>￥99</s></span>
+					</span>
+				</div>
+			</div>
+			<div class="row z_row2">
+				<div class="z_buy"></div>
+			</div>
+		</div>
+	</body>
+</html>
