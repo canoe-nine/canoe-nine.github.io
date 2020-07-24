@@ -2,15 +2,19 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
-		<link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
+		<title>云音乐商城 - 音乐购有趣</title>
+		<link rel="icon" href="../img/favicon.ico"/>
+		<link rel="stylesheet" type="text/css" href="../css/favicon.css"/>
 		<style type="text/css">
 			*{
 				margin: 0px;
 				padding: 0px;
 			}
-			body{
+			body,html{
+				height: 100%;
+				width: 100%;
 				position: relative;
+				min-width: 1300px;
 			}
 			.z_header{
 				width: 100%;
@@ -267,38 +271,42 @@
 				height: 480px;
 				/*background-color: powderblue;*/
 				min-width: 1100px;
+				position: relative;
+				min-width: 1300px;
 			}
-			.z_nav>#container{
-                width: 100%;
-                height: 480px;
-                background-color: #affe0c;
-                position: relative;
-                /*z-index: -1;*/
-            }
-            .z_nav>#container>#photos{
-                margin: 0;
-                position: absolute;
-                left:50%;
-                transform: translateX(-50%);
-                top: 0px;
-                width:1100px;
+			.z_nav>#show{
                 height:480px;
+				/*border: 1px solid #000;*/
+				/*margin:100px auto;*/
+				overflow: hidden;	
+				position: relative;
             }
-            .z_nav>#container>#photos>.pictures{
-                position: absolute;
-                width:1100px;
-                height:480px;
+            .z_nav>#show>#ul{
+                width:700%;
+				position: relative;
+            }
+            .z_nav>#show>#ul>.lin{
                 list-style: none;
-              /*  z-index: -10;*/
+				float: left;
+				width:14.4%;
+				height:480px;
+                /*z-index: -10;*/
             }
-			.z_nav>#container>#arrows{
+            .z_nav>#show>#ul>.lin>img{
+            	width:75%;
+				height:480px;
+				position: relative;
+				left: 50%;
+				transform: translateX(-50%);
+            }
+			.z_nav>#show>#arrows{
                 position: absolute;
                 width: 100%;
-                height:480px;
+                /*height:480px;*/
                 top: 240px;
                 margin-top: -32px;
             }
-            .z_nav>#container>#arrows>.arrow1{
+            .z_nav>#show>#arrows>.arrow1{
                 background-color: rgba(144,144,144,0.1);
                 width:37px;
                 height: 63px;
@@ -311,7 +319,7 @@
                 background-position: -1px 0px;
                 cursor: pointer;
             }
-            .z_nav>#container>#arrows>.arrow2{
+            .z_nav>#show>#arrows>.arrow2{
                 background-color: rgba(144,144,144,0.1);
                 width:37px;
                 height: 63px;
@@ -324,25 +332,31 @@
                 background-image: url(../img/pointlist.png);
                 background-position: 38px 0px;
             }
-            .z_nav>#buttons{
+            .z_nav>#ul2{
                 position: absolute;
-                margin-top: -30px;
-                /*margin-left:565px;*/
-                left: 50%;
-                transform: translateX(-50%);
-                z-index: 4;
-                margin-bottom: 20px;
+				left:50%;
+				transform: translateX(-50%);
+				background: rgba(255,255,255,0.3);
+				padding: 2px 0px 2px 6px;
+				border-radius: 15px;
+				bottom:15px;
+				/*z-index: 9999;*/
             }
-            .z_nav>#buttons>.button{
-                width:6px;
-                height:6px;
-                border-radius: 3px;
-                background-color:grey;
-                float:left;
-                margin-right: 15px;
-                cursor: pointer;
+            .z_nav>#ul2>li{
+            	list-style: none;
+                width:8px;
+				height:8px;
+				border-radius: 50%;
+				float: left;
+				margin-right: 6px;
+				list-style: none;
+				background: white;
+				/*position: relative;*/
+				/*z-index: 9999;*/
             }
-			
+			.z_nav>#ul2>.li:nth-of-type(5){
+				margin-right: 0px;
+			}
 			
 			
 			.z_list{
@@ -636,7 +650,7 @@
 				/*background: peachpuff;*/
 				position: absolute;
 				top: 670px;
-				right: 155px;
+				right: 9%;
 			}
 			.z_gud>ul{
 				border: 1px solid silver;
@@ -673,10 +687,18 @@
 			}
 			.z_gud>ul>.z_to{
 				height: 35px;
+				padding-top: 0px;
+				border-bottom: 0px;
+				/*display: block;*/
+				/*display: none;*/
+			}
+			.z_gud>ul>.z_to>span{
+				display: inline-block;
+				height: 35px;
+				width: 100%;
 				background-image: url(../img/totop.png);
 				background-repeat: no-repeat;
 				background-position: -71px 0px;
-				/*display: none;*/
 			}
 			footer{
 				width: 100%;
@@ -752,7 +774,12 @@
 				margin-bottom: 5px;
 				text-align:center
 			}
-
+			@media (max-width:1500px){
+				/*当屏幕宽度小于640px时触发*/
+				.z_gud{
+					display: none;
+				}
+			}
     
     
 		</style>
@@ -826,36 +853,37 @@
 		</div>
 		<!--轮播图-->
 		<div class="z_nav">
-			<div id='container'>
-	            <ul id='photos'> 
-	                <li class='pictures' id='#f2ce1e'><img src='../img/lunbo2.jpg' style="width: 100%"></li>
-	                <li class='pictures' id='#000010'><img src='../img/lunbo3.jpg' style="width: 100%"></li>
-	                <li class='pictures' id='#cae2ee'><img src='../img/lunbo4.jpg' style="width: 100%"></li>
-	                <li class='pictures' id='#0049a6'><img src='../img/lunbo5.jpg' style="width: 100%"></li>
-	                <li class='pictures' id='#ffba41'><img src='../img/lunbo6.jpg' style="width: 100%"></li>
-	                <li class='pictures' id='#affe0c'><img src='../img/lunbo1.jpg' style="width: 100%"></li>
+			<div id='show'>
+	            <ul id='ul'> 
+	            	<li class="lin" style='background:#affe0c'><img src='../img/lunbo1.jpg'></li>
+	                <li class="lin" style='background:#f2ce1e'><img src='../img/lunbo2.jpg'></li>
+	                <li class="lin" style='background:#000010'><img src='../img/lunbo3.jpg'></li>
+	                <li class="lin" style='background:#cae2ee'><img src='../img/lunbo4.jpg'></li>
+	                <li class="lin" style='background:#0049a6'><img src='../img/lunbo5.jpg'></li>
+	                <li class="lin" style='background:#ffba41'><img src='../img/lunbo6.jpg'></li>
+	                
 	            </ul>
 	            <div id='arrows'>
-	                	<span class='arrow arrow1'></span>
-	                	<span class='arrow arrow2'></span>
+	                	<span class='arrow1'></span>
+	                	<span class='arrow2'></span>
 	            </div>
             
         	</div>
-			<div id='buttons'>
-	                <span class='button' style='background-color: red;'></span>
-	                <span class='button'></span>
-	                <span class='button'></span>
-	                <span class='button'></span>
-	                <span class='button'></span>
-	                <span class='button'></span>
-	       </div>
+			<ul id="ul2">
+				<li style="background: red;"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
 		</div>
 		<!--大菜单-->
 		<div class="z_list">
 			<div class="z_tab">
 				<ul>
 					<li>
-						<a href="#">
+						<a href="热销爆品.html">
 							<img src="../img/hot.jpg"/>
 							<span>热销爆品</span>
 						</a>
@@ -1189,6 +1217,8 @@
 			
 //			导航栏按钮点击出现菜单
 			var flag = true;
+
+			
 			$(".z_inp>input").click(function(){
 				if(flag){
 					$(".z_hot").css("display",("inline-block"));
@@ -1203,54 +1233,99 @@
 	//				console.log($(window).scrollTop());
 	//				让ul固定
 					if($(window).scrollTop()>480){
-						$(".z_gud").css({"position":"fixed","top":"220px","right":"155px"})
+						$(".z_gud").css({"position":"fixed","top":"220px","right":"9%"})
 					}else{
-						$(".z_gud").css({"position":"absolute","top":"670px","right":"155px"})
+						$(".z_gud").css({"position":"absolute","top":"670px","right":"9%"})
 					}
 			$(".z_to").click(function(){
 					$("body,html").animate({"scrollTop":0},0);
 				})
 			})
 			
+			
 			//			轮播图开始
-			var count = 0;  //定义图片变更次数
-            var FI=null; //存储淡入interval循环
-            var timer=null;//存储轮播interval循环
-            var fullBox = document.getElementById('container');//用于设置背景颜色
-            var pictures=document.getElementsByClassName('pictures');//存储图片
-            var arrow=document.getElementsByClassName('arrow');//存储左右箭头
-            var button=document.getElementsByClassName('button');//存储下部圆圈
-            var percent = 0;//淡入循环变量
-            function fadeIn(){//淡入函数
-                    FI = setInterval(function (){
-                    percent += 0.010000; //精确浮点数精度
-                    if(percent>=1){clearInterval(FI);}
-                    else{
-                        pictures[count].style.opacity=percent;}
-                    },2);
-                    percent = 0;}
-            function pic(){//图像变换函数
-                for(var i=0;i<pictures.length;i++){
-                    pictures[i].style.opacity=0;};//所有图片透明
-                fullBox.style.backgroundColor = pictures[count].id; //背景图片颜色等于相应图片的id
-                for(var c=0;c<button.length;c++){//底部按钮颜色变化
-                    button[c].style.backgroundColor = 'grey';
-                };
-               		button[count].style.backgroundColor='red';    
-            }
-            
-            //主轮播循环
-            showtime();
-            function showtime(){
-            	timer=setInterval(show,2000)
-            	};
-            function show(){//轮播循环函数
-                count ++;
-                if(count > pictures.length-1 ){
-                count = 0;};
-                fadeIn();               
-                pic();
-            }
+			var ul = document.getElementById("ul");
+			var btn1 = document.getElementsByClassName("arrow1");
+			var btn2 = document.getElementsByClassName("arrow2");
+			var show = document.getElementById("show");
+			var lis = document.getElementById("ul2").children;
+//			var t = document.getElementsByClassName("lin").offsetWidth;
+			var t ;
+			setInterval(function(){
+				t = $(".lin").width();
+			},100);
+//			console.log($(".lin").width());
+			var i=0;
+			var timer;
+			function go(){
+				i++;
+				if(i==6){
+					i = 0;
+				}
+//				移动一张图片宽度
+				ul.style.left = -t*i+"px";
+				for(var j=0;j<lis.length;j++){
+					lis[j].style.background = "white";
+				}
+				lis[i].style.background = "red";
+			}
+			timer = setInterval("go()",2000);
+//			自动切换图片功能
+//			每隔某段时间自动切换
+//			var timer = setInterval(function(){
+//				i++;
+//				if(i==5){
+//					i = 0;
+//				}
+////				移动一张图片宽度
+//				ul.style.left = -500*i+"px";
+//			},1000)
+//			go();
+			show.onmouseover=function(){
+				clearInterval(timer);
+//				$(".arrow1").css("background","rgba(144,144,144,0.3)");
+//          	$(".arrow1").css("background-image","url(../img/pointlist.png)");
+//          	$(".arrow1").css("background-position","-1px 0px");
+			}
+			show.onmouseout=function(){
+				timer = setInterval("go()",2000);
+			}
+//			左右按钮功能
+			btn1[0].onclick=function(){
+				i--;
+				if(i==-1){
+					i=5;
+				}
+				ul.style.left = -t*i+"px";
+				for(var j=0;j<lis.length;j++){
+					lis[j].style.background = "white";
+				}
+				lis[i].style.background = "red";
+			}
+			btn2[0].onclick=function(){
+				i++;
+				if(i==6){
+					i = 0;
+				}
+				ul.style.left = -t*i+"px";
+				for(var j=0;j<lis.length;j++){
+					lis[j].style.background = "white";
+				}
+				lis[i].style.background = "red";
+			}
+			
+			for(var j=0;j<lis.length;j++){
+				lis[j].setAttribute("index",j);
+				lis[j].onclick=function(){
+					i = this.getAttribute("index");
+					for(var j=0;j<lis.length;j++){
+						lis[j].style.background = "white";
+					}
+					this.style.background = "#f60";
+					ul.style.left = -t*i+"px";
+				}
+			}
+			
             $(".arrow1").mouseover(function(){
             	clearInterval(timer);
             	$(".arrow1").css("background","rgba(144,144,144,0.3)");
@@ -1258,7 +1333,7 @@
             	$(".arrow1").css("background-position","-1px 0px");
             });
             $(".arrow1").mouseout(function(){
-            	showtime();
+//          	go();
             	$(".arrow1").css("background","rgba(144,144,144,0.1)");
             	$(".arrow1").css("background-image","url(../img/pointlist.png)");
             	$(".arrow1").css("background-position","-1px 0px");
@@ -1270,42 +1345,12 @@
             	$(".arrow2").css("background-position","38px 0px");
             });
             $(".arrow2").mouseout(function(){
-            	showtime();
+//          	go();
             	$(".arrow2").css("background","rgba(144,144,144,0.1)");
             	$(".arrow2").css("background-image","url(../img/pointlist.png)");
             	$(".arrow2").css("background-position","38px 0px");
             });
-            $(".arrow1").click(function(){
-            	count--;
-            	if(count < 0){
-            		count = pictures.length-1;
-               }
-                fadeIn();
-                pic();
-             });
-             $(".arrow2").click(function(){
-            	count++;
-            	if(count>pictures.length - 1){
-            		count = 0;
-               }
-                fadeIn();
-                pic();
-             });
-             $(".arrow2").click(function(){
-            	clearInterval(timer);
-            });
-            $(".arrow2").click(function(){
-            	showtime();
-            });
-            for(var i=0;i<button.length;i++){
-            	button[i].index=i;
-            	button[i].onclick=function(){
-            		clearInterval(timer);
-                    count = this.index;//确保count值不会出错
-                    fadeIn();
-                    pic();
-             };
-            }
+           
 
 		</script>
 	</body>

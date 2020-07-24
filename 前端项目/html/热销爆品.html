@@ -2,20 +2,24 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>热销爆品</title>
+		<link rel="icon" href="../img/favicon.ico"/>
 		<link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
 		<style type="text/css">
 			*{
 				margin: 0px;
 				padding: 0px;
 			}
-			body{
+			body,html{
+				height: 100%;
+				width: 100%;
 				position: relative;
 			}
 			.z_header{
 				width: 100%;
 				height: 70px;
 				background: white;
+				border-bottom: 1px solid rgba(240,240,240);
 			}
 			.z_header>.z_con{
 				width: 1100px;
@@ -259,6 +263,11 @@
 
 			}
 			
+			.z_tu{
+				width: 1100px;
+				min-width: 1100px;
+				margin: 40px auto 50px auto;
+			}
 			.z_conter{
 				width: 1100px;
 				overflow: hidden;
@@ -266,6 +275,7 @@
 				margin: 0px auto;
 				position: relative;
 			}
+			
 			.z_conter>.z_row1{
 				width: 1100px;
 			}
@@ -356,9 +366,10 @@
 				width: 60px;
 				/*height: 300px;*/
 				/*background: peachpuff;*/
-				position: absolute;
-				top: 670px;
-				right: 155px;
+				/*position: absolute;*/
+				top:280px;
+				right: 10%;
+				position: fixed;
 			}
 			.z_gud>ul{
 				border: 1px solid silver;
@@ -395,10 +406,18 @@
 			}
 			.z_gud>ul>.z_to{
 				height: 35px;
+				padding-top: 0px;
+				border-bottom: 0px;
+				/*display: block;*/
+				/*display: none;*/
+			}
+			.z_gud>ul>.z_to>span{
+				display: inline-block;
+				height: 35px;
+				width: 100%;
 				background-image: url(../img/totop.png);
 				background-repeat: no-repeat;
 				background-position: -71px 0px;
-				/*display: none;*/
 			}
 			footer{
 				width: 100%;
@@ -474,7 +493,12 @@
 				margin-bottom: 5px;
 				text-align:center
 			}
-
+			@media (max-width:1500px){
+				/*当屏幕宽度小于640px时触发*/
+				.z_gud{
+					display: none;
+				}
+			}
     
     
 		</style>
@@ -547,10 +571,12 @@
 			
 		</div>
 			
+		<div class="z_tu">
+			<img src="../img/wuxian.jpg"/>
+		</div>
 		<div class="z_conter">
 			<div class="z_row1">
 				<!--编辑推荐-->
-				<h2>编辑推荐</h2>
 				<ul class="z_li">
 					<li>
 						<img src="../img/erji.jpg"/>
@@ -653,7 +679,6 @@
 			
 			<!--热门商品-->
 			<div class="z_row1">
-				<h2>热门商品</h2>
 				<ul class="z_li" >
 					<li>
 						<img src="../img/E43.jpg"/>
@@ -768,7 +793,7 @@
 						<span class="span2"></span><br />
 						<span>客服</span>
 					</li>
-					<li class="z_to">
+					<li class="z_to" style="display: none;">
 						<span></span>
 					</li>
 				</ul>
@@ -827,10 +852,11 @@
 	//				console.log($(window).scrollTop());
 	//				让ul固定
 					if($(window).scrollTop()>480){
-						$(".z_gud").css({"position":"fixed","top":"220px","right":"155px"})
+						$(".z_to").css({"display":"block"});
 					}else{
-						$(".z_gud").css({"position":"absolute","top":"670px","right":"155px"})
+						$(".z_to").css({"display":"none"});
 					}
+					
 			$(".z_to").click(function(){
 					$("body,html").animate({"scrollTop":0},0);
 				})
